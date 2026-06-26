@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 9
+- version: 10
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5/P6/P7 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5/P6/P7/P8 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -18,7 +18,7 @@
 
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
 P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
-P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor가 있다. 이후 구현은 이 WBS의 phase를
+P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor, P8 targetability probe가 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -508,7 +508,7 @@ ops 승격 후보:
 - domain oracle hit와 N-best oracle 개선 여부가 P10 진입 risk flag로 남음
 - score 해석의 residual uncertainty가 문서화됨
 
-### P8. HF N-best Targetability Probe - todo M
+### P8. HF N-best Targetability Probe - done M
 
 목표: HF N-best artifact와 reference를 사용해 N-best에 correction 가능성이 실제로 있는지 확인한다.
 
@@ -517,6 +517,8 @@ branch: `wbs/P8-hf-nbest-targetability`
 spec: `docs/dev/specs/p8-hf-nbest-targetability.md`
 plan: `docs/dev/plans/p8-hf-nbest-targetability-plan.md`
 loop level: Level 1
+result: synthetic HF N-best artifact와 reference로 unique count, top1/oracle CER/WER, domain oracle,
+reference surface ratio, seed wrong-surface ratio를 계산하고 report를 생성했다.
 
 예상 산출물:
 

@@ -1,0 +1,37 @@
+{
+  "segment_id": "target-seg-001",
+  "model": "mock",
+  "runtime": "hf-transformers",
+  "decode_config": {
+    "num_beams": 20,
+    "num_return_sequences": 20,
+    "raw_returned_hypotheses": 2
+  },
+  "hypotheses": [
+    {
+      "rank": 1,
+      "token_ids": [1],
+      "raw_text": "손해보혐 가입",
+      "normalized_text": "손해보혐 가입",
+      "score_source": "hf_transition_scores",
+      "score_is_logprob": true,
+      "length_penalty": 1.0,
+      "raw_logprob": -1.0,
+      "decoder_score": -1.0,
+      "asr_cost": 1.0
+    },
+    {
+      "rank": 2,
+      "token_ids": [2],
+      "raw_text": "손해보험 가입",
+      "normalized_text": "손해보험 가입",
+      "score_source": "hf_transition_scores",
+      "score_is_logprob": true,
+      "length_penalty": 1.0,
+      "raw_logprob": -2.0,
+      "decoder_score": -2.0,
+      "asr_cost": 2.0
+    }
+  ],
+  "created_at": "2026-06-26T12:00:00+09:00"
+}

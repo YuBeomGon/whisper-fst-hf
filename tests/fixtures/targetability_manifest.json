@@ -1,0 +1,8 @@
+{
+  "references": {
+    "target-seg-001": "손해보험 가입"
+  },
+  "domain_terms": {
+    "target-seg-001": ["손해보험"]
+  }
+}

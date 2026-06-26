@@ -7,7 +7,8 @@
 P0 Governance / Docs Scaffold, P1 Python Scaffold / Environment, P2 FST Backend Feasibility,
 P3 Core Contracts / DTO / Config, P3.5 Rule Source Audit / Seed Rule Review,
 P4 Normalization / Protection Layer, P5 Synthetic N-best WFST Composition MVP,
-P6 Correction Safety / Trace / Domain Gating, P7 Hugging Face Whisper N-best Extractor를 완료했다.
+P6 Correction Safety / Trace / Domain Gating, P7 Hugging Face Whisper N-best Extractor,
+P8 HF N-best Targetability Probe를 완료했다.
 
 현재 기준 문서:
 
@@ -31,9 +32,10 @@ P6 Correction Safety / Trace / Domain Gating, P7 Hugging Face Whisper N-best Ext
 | P5 Synthetic N-best WFST Composition MVP | done | Pynini unavailable 기준 phrase-rule fallback composition 구현 |
 | P6 Correction Safety / Trace / Domain Gating | done | domain gate, margin, trace, free-talk safety smoke 구현 |
 | P7 Hugging Face Whisper N-best Extractor | done | mocked HF generation에서 N-best artifact/report 생성 |
+| P8 HF N-best Targetability Probe | done | N-best oracle/seed surface targetability report 생성 |
 
 ## Next Actions
 
-1. P8 HF N-best Targetability Probe를 시작한다.
-2. HF N-best artifact와 reference로 unique count, oracle, seed wrong-surface ratio를 계산한다.
-3. targetability가 낮으면 P10은 negative evidence run으로 진행한다.
+1. P9 Evaluation Harness를 시작한다.
+2. CER/WER, domain accuracy, correction precision/recall, free-talk safety metric을 구현한다.
+3. A/B/C/D comparison report format을 고정한다.
