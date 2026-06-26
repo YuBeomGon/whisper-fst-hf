@@ -1,0 +1,2 @@
+pair_id,wrong,right,normalized_wrong,normalized_right,support_run_count,support_file_count,support_batch_count,source_files,source_runs,risk_flags,suggested_class,review_class,review_note
+P17_SAMPLE_001,손해보혐,손해보험,손해보혐,손해보험,2,1,1,sample_l,run_a;run_b,single_file_only,needs_review,,

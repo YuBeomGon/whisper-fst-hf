@@ -112,7 +112,7 @@ WBS 2.0은 파일 단위 split을 먼저 고정한다.
 | P14 Audio/Text Source Inventory | done | `wbs/v2/P14-audio-text-source-inventory` |
 | P15 Label Parser / Normalization v2 | done | `wbs/v2/P15-label-parser-normalization-v2` |
 | P16 SRT Run Inventory / Matching | done | `wbs/v2/P16-srt-run-inventory-matching` |
-| P17 Misrecognition Pair Mining | pending | `wbs/v2/P17-misrecognition-pair-mining` |
+| P17 Misrecognition Pair Mining | done | `wbs/v2/P17-misrecognition-pair-mining` |
 | P18 Pair Review / Rule Source Audit v2 | pending | `wbs/v2/P18-pair-review-rule-source-audit-v2` |
 | P19 Real HF N-best Extraction | pending | `wbs/v2/P19-real-hf-nbest-extraction` |
 | P20 Real N-best Targetability | pending | `wbs/v2/P20-real-nbest-targetability` |
@@ -278,7 +278,7 @@ DoD:
 
 ---
 
-## P17. Misrecognition Pair Mining
+## P17. Misrecognition Pair Mining - done
 
 목표: label reference와 모든 matched SRT hypothesis를 비교해 `wrong -> right` pair candidate dictionary를 만든다.
 
@@ -289,6 +289,10 @@ branch: `wbs/v2/P17-misrecognition-pair-mining`
 spec: `docs/dev/specs/wbs-2.0/p17-misrecognition-pair-mining.md`
 
 plan: `docs/dev/plans/wbs-2.0/p17-misrecognition-pair-mining-plan.md`
+
+result: 실제 `_l.srt` 4,128개를 label reference와 비교해 3,081,419개 occurrence와 104,924개
+candidate pair를 생성했다. 후보 수와 저신뢰/단일 파일 후보 비중이 높으므로 P17 산출물은 source mining
+artifact로만 간주하고, correction rule 승격은 P18 source audit 결과에만 따른다.
 
 outputs:
 
