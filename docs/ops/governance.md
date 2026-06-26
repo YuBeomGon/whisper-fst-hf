@@ -6,7 +6,7 @@
 
 | Class | Path | Rule |
 | --- | --- | --- |
-| Current SSOT | `docs/dev/specs/project-design.md`, `docs/wbs.md` | 현재 설계와 실행 기준 |
+| Current SSOT | `docs/dev/specs/project-design.md`, `docs/wbs.md`, `docs/wbs-2.0-real-hf-dataset.md` | 현재 설계와 실행 기준 |
 | Status | `docs/status.md`, `docs/CHANGELOG.md` | 현재 상태와 변경 이력 |
 | Operations | `docs/ops/**` | 작업 방식, 환경, 평가 정책 |
 | Reports | `docs/reports/**` | 조사, 실험, audit 결과 |
@@ -15,7 +15,8 @@
 
 ## 2. SSOT 원칙
 
-- WBS current 문서는 `docs/wbs.md`다.
+- WBS 1.0 완료 이력 문서는 `docs/wbs.md`다.
+- WBS 2.0 active planning/execution 문서는 `docs/wbs-2.0-real-hf-dataset.md`다.
 - 전체 프로젝트 설계 current 문서는 `docs/dev/specs/project-design.md`다.
 - `docs/ops/**`는 SSOT를 대체하지 않고 링크하거나 세부 운영 규칙을 둔다.
 - 오래된 review나 report가 current 문서와 충돌하면 current SSOT를 우선한다.
@@ -28,7 +29,8 @@
 
 ## 4. 작업 단위
 
-- 모든 구현은 `docs/wbs.md`의 phase ID를 기준으로 진행한다.
+- WBS 1.0 구현 이력은 `docs/wbs.md`의 phase ID를 기준으로 확인한다.
+- WBS 2.0 구현은 `docs/wbs-2.0-real-hf-dataset.md`의 phase ID를 기준으로 진행한다.
 - phase 시작 전 관련 design/spec을 확인한다.
 - phase 완료 시 `docs/status.md`와 `docs/CHANGELOG.md`를 갱신한다.
 - phase 완료 주장 전 검증 명령과 결과를 확인한다.
@@ -40,6 +42,7 @@
 - `AGENTS.md`
 - `docs/dev/specs/project-design.md`
 - `docs/wbs.md`
+- `docs/wbs-2.0-real-hf-dataset.md`
 - `docs/ops/governance.md`
 - `docs/ops/coding-conventions.md`
 - `docs/ops/environment.md`

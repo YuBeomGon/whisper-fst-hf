@@ -8,8 +8,8 @@ Branch: `wbs/P12-teacher-force-rescore-design`
 
 Reviewed P12 design artifacts:
 
-- `docs/dev/specs/p12-teacher-force-rescore-design.md`
-- `docs/dev/plans/p12-teacher-force-rescore-design-plan.md`
+- `docs/dev/specs/wbs-1.0/p12-teacher-force-rescore-design.md`
+- `docs/dev/plans/wbs-1.0/p12-teacher-force-rescore-design-plan.md`
 
 ## Findings
 

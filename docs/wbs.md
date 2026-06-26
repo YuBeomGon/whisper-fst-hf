@@ -1,8 +1,9 @@
-# Whisper WFST Project WBS
+# Whisper WFST Project WBS 1.0
 
 - version: 15
 - 최종 갱신: 2026-06-26
 - 현재 상태: P0-P13 완료, PoC decision은 Continue-with-scope-change
+- 후속 active WBS: `docs/wbs-2.0-real-hf-dataset.md`
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -13,8 +14,8 @@
 
 ## 1. 역할
 
-이 문서는 Whisper WFST 프로젝트의 실행 척추다. 설계 본문을 길게 담기보다 phase 순서, 상태,
-의존성, 크기, branch/spec/plan/report 산출물, 완료 기준을 관리한다.
+이 문서는 Whisper WFST 프로젝트의 WBS 1.0 완료 이력이다. 설계 본문을 길게 담기보다 phase 순서, 상태,
+의존성, 크기, branch/spec/plan/report 산출물, 완료 기준을 보존한다.
 
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
 P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
@@ -29,7 +30,7 @@ PoC 범위가 아니며, 필요성이 확인될 때 후속 WBS로 분리한다.
 
 ## 2. 운영 전제
 
-P2 이후 각 build phase는 대화 기억이 아니라 repository 문서와 branch를 기준으로 진행한다.
+WBS 1.0의 각 build phase는 대화 기억이 아니라 repository 문서와 branch를 기준으로 진행했다.
 
 ```text
 WBS phase 선택
@@ -101,7 +102,7 @@ dep: none
 - current / reference / history / evidence / review 문서 구분
 - SSOT 원칙 정의
 - status는 현재 WBS와 다음 액션만 담도록 정의
-- current WBS SSOT는 `docs/wbs.md`로 고정하고 ops 문서는 이를 링크만 하도록 정의
+- WBS 1.0 SSOT는 `docs/wbs.md`로 고정하고 ops 문서는 이를 링크만 하도록 정의
 - WBS ID 기반 작업 규칙 정의
 - commit 전 governance protected docs 승인 규칙 정의
 - code, schema, config, artifact, test 원칙 정의
@@ -118,7 +119,7 @@ dep: none
 - 다음 세션에서 읽을 문서 순서가 `AGENTS.md`에 명시됨
 - `docs/assets/**`가 read-only reference로 문서화됨
 - `docs/dev/specs/project-design.md`와 `docs/wbs.md`가 index에서 연결됨
-- WBS current 문서 위치가 `docs/wbs.md`로 확정됨
+- WBS 1.0 문서 위치가 `docs/wbs.md`로 확정됨
 - governance 문서와 status 문서가 서로 모순되지 않음
 
 ### P1. Python Scaffold / Environment - done S
@@ -165,8 +166,8 @@ dep: P0
 
 dep: P1
 branch: `wbs/P2-fst-backend-feasibility`
-spec: `docs/dev/specs/p2-fst-backend-feasibility.md`
-plan: `docs/dev/plans/p2-fst-backend-feasibility-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p2-fst-backend-feasibility.md`
+plan: `docs/dev/plans/wbs-1.0/p2-fst-backend-feasibility-plan.md`
 loop level: Level 1
 result: 현재 uv/Python 3.12.4 환경에서 `pynini` import 실패. P3 이후 구현은 Pynini backend를
 무조건 전제하지 않고 availability check와 fail-fast 또는 fallback 전제를 포함해야 한다.
@@ -214,8 +215,8 @@ ops 승격 후보:
 
 dep: P2
 branch: `wbs/P3-core-contracts`
-spec: `docs/dev/specs/p3-core-contracts-dto-config.md`
-plan: `docs/dev/plans/p3-core-contracts-dto-config-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p3-core-contracts-dto-config.md`
+plan: `docs/dev/plans/wbs-1.0/p3-core-contracts-dto-config-plan.md`
 loop level: Level 2
 result: N-best artifact, correction rule CSV, backend status, correction trace DTO와 JSON/JSONL/CSV IO helper를
 구현했다. P2의 Pynini unavailable 결과는 `configs/correction.yaml`과 `BackendStatus` contract에 반영했다.
@@ -269,8 +270,8 @@ ops 승격 후보:
 
 dep: P3
 branch: `wbs/P3.5-rule-source-audit`
-spec: `docs/dev/specs/p3.5-rule-source-audit.md`
-plan: `docs/dev/plans/p3.5-rule-source-audit-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p3.5-rule-source-audit.md`
+plan: `docs/dev/plans/wbs-1.0/p3.5-rule-source-audit-plan.md`
 loop level: Level 1
 result: rule source candidate JSONL을 audit해 safe seed, review optional, disabled 후보를 분리했다.
 final eval 유래, 숫자/PII, 긴 script span rule은 safe-only seed에서 제외했다.
@@ -313,8 +314,8 @@ ops 승격 후보:
 
 dep: P3.5
 branch: `wbs/P4-normalization-protection`
-spec: `docs/dev/specs/p4-normalization-protection.md`
-plan: `docs/dev/plans/p4-normalization-protection-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p4-normalization-protection.md`
+plan: `docs/dev/plans/wbs-1.0/p4-normalization-protection-plan.md`
 loop level: Level 2
 result: Unicode NFC normalization, normalized key, structured protected span detection, external span protection,
 placeholder restore, protected index lookup을 구현했다.
@@ -357,8 +358,8 @@ ops 승격 후보:
 
 dep: P4
 branch: `wbs/P5-synthetic-nbest-wfst`
-spec: `docs/dev/specs/p5-synthetic-nbest-wfst.md`
-plan: `docs/dev/plans/p5-synthetic-nbest-wfst-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p5-synthetic-nbest-wfst.md`
+plan: `docs/dev/plans/wbs-1.0/p5-synthetic-nbest-wfst-plan.md`
 loop level: Level 2
 result: Pynini unavailable 조건에 맞춰 phrase-rule fallback composition을 구현했다. N-best candidate,
 deterministic rule order, left-to-right rule application, optional keep/correct branch, obligatory correction,
@@ -414,8 +415,8 @@ ops 승격 후보:
 
 dep: P5
 branch: `wbs/P6-correction-safety-trace-domain-gating`
-spec: `docs/dev/specs/p6-correction-safety-trace-domain-gating.md`
-plan: `docs/dev/plans/p6-correction-safety-trace-domain-gating-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p6-correction-safety-trace-domain-gating.md`
+plan: `docs/dev/plans/wbs-1.0/p6-correction-safety-trace-domain-gating-plan.md`
 loop level: Level 2
 result: domain gate, margin decision, protected span safety order, JSON trace, free-talk safety smoke를 구현했다.
 
@@ -463,8 +464,8 @@ ops 승격 후보:
 
 dep: P6
 branch: `wbs/P7-hf-nbest-extractor`
-spec: `docs/dev/specs/p7-hf-nbest-extractor.md`
-plan: `docs/dev/plans/p7-hf-nbest-extractor-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p7-hf-nbest-extractor.md`
+plan: `docs/dev/plans/wbs-1.0/p7-hf-nbest-extractor-plan.md`
 loop level: Level 2
 result: mocked HF generation output을 P3 N-best artifact로 변환하고 score metadata, unique/duplicate count,
 oracle risk flag, score uncertainty report를 생성했다. 실제 model/audio smoke는 환경 의존성으로 residual risk로 남겼다.
@@ -515,8 +516,8 @@ ops 승격 후보:
 
 dep: P3.5, P7
 branch: `wbs/P8-hf-nbest-targetability`
-spec: `docs/dev/specs/p8-hf-nbest-targetability.md`
-plan: `docs/dev/plans/p8-hf-nbest-targetability-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p8-hf-nbest-targetability.md`
+plan: `docs/dev/plans/wbs-1.0/p8-hf-nbest-targetability-plan.md`
 loop level: Level 1
 result: synthetic HF N-best artifact와 reference로 unique count, top1/oracle CER/WER, domain oracle,
 reference surface ratio, seed wrong-surface ratio를 계산하고 report를 생성했다.
@@ -560,8 +561,8 @@ ops 승격 후보:
 
 dep: P5, P6
 branch: `wbs/P9-evaluation-harness`
-spec: `docs/dev/specs/p9-evaluation-harness.md`
-plan: `docs/dev/plans/p9-evaluation-harness-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p9-evaluation-harness.md`
+plan: `docs/dev/plans/wbs-1.0/p9-evaluation-harness-plan.md`
 loop level: Level 2
 result: evaluation manifest validation, CER/WER, domain accuracy, N-best oracle, correction precision/recall,
 overcorrection, free-talk safety metrics, A/B/C/D report format을 구현했다.
@@ -615,8 +616,8 @@ ops 승격 후보:
 
 dep: P7, P8, P9
 branch: `wbs/P10-offline-mvp-run`
-spec: `docs/dev/specs/p10-offline-mvp-run.md`
-plan: `docs/dev/plans/p10-offline-mvp-run-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p10-offline-mvp-run.md`
+plan: `docs/dev/plans/wbs-1.0/p10-offline-mvp-run-plan.md`
 loop level: Level 2
 result: committed fixture 기반 offline MVP pipeline을 구현했다. targetability, correction trace, evaluation,
 output checksum manifest, no-production-claim report를 생성했다.
@@ -662,8 +663,8 @@ ops 승격 후보:
 
 dep: P10
 branch: `wbs/P11-calibration-rule-tuning`
-spec: `docs/dev/specs/p11-calibration-rule-tuning.md`
-plan: `docs/dev/plans/p11-calibration-rule-tuning-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p11-calibration-rule-tuning.md`
+plan: `docs/dev/plans/wbs-1.0/p11-calibration-rule-tuning-plan.md`
 loop level: Level 2
 result: synthetic sweep 후보의 hard gate filtering, best config selection, calibration report, freeze checksum,
 selected config metadata를 구현했다.
@@ -712,16 +713,16 @@ ops 승격 후보:
 
 dep: P10, P11
 branch: `wbs/P12-teacher-force-rescore-design`
-spec: `docs/dev/specs/p12-teacher-force-rescore-design.md`
-plan: `docs/dev/plans/p12-teacher-force-rescore-design-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p12-teacher-force-rescore-design.md`
+plan: `docs/dev/plans/wbs-1.0/p12-teacher-force-rescore-design-plan.md`
 loop level: Level 1
 result: 현재 synthetic evidence 기준 teacher-force rescore는 current MVP scope에 추가하지 않는 것으로 결정했다.
 필요 시 후속 WBS input/output/metric/latency gate를 정의했다.
 
 예상 산출물:
 
-- `docs/dev/specs/p12-teacher-force-rescore-design.md`
-- `docs/dev/plans/p12-teacher-force-rescore-design-plan.md`
+- `docs/dev/specs/wbs-1.0/p12-teacher-force-rescore-design.md`
+- `docs/dev/plans/wbs-1.0/p12-teacher-force-rescore-design-plan.md`
 
 ops 승격 후보:
 
@@ -750,8 +751,8 @@ ops 승격 후보:
 
 dep: P10, P11, optional P12
 branch: `wbs/P13-poc-go-no-go`
-spec: `docs/dev/specs/p13-poc-go-no-go.md`
-plan: `docs/dev/plans/p13-poc-go-no-go-plan.md`
+spec: `docs/dev/specs/wbs-1.0/p13-poc-go-no-go.md`
+plan: `docs/dev/plans/wbs-1.0/p13-poc-go-no-go-plan.md`
 loop level: Level 1
 result: `Continue-with-scope-change`로 판정했다. Synthetic evidence는 engineering feasibility로만 해석하고,
 real HF audio evaluation과 Pynini/fallback backend decision을 후속 WBS로 분리했다.

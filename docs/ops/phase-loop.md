@@ -19,7 +19,8 @@ WBS phase 선택
 ## Phase Start Checklist
 
 - `docs/status.md`를 읽고 현재 phase를 확인한다.
-- `docs/wbs.md`에서 phase 목표, 산출물, 완료 기준을 확인한다.
+- active WBS 문서에서 phase 목표, 산출물, 완료 기준을 확인한다.
+- WBS 1.0 이력은 `docs/wbs.md`, WBS 2.0 실행 기준은 `docs/wbs-2.0-real-hf-dataset.md`를 사용한다.
 - 관련 `docs/ops/**` 또는 `docs/reports/**`를 확인한다.
 - 변경할 파일과 검증 명령을 정한다.
 

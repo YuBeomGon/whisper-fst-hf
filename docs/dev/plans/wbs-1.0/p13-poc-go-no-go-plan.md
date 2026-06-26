@@ -14,8 +14,8 @@
 
 ## Files
 
-- Create: `docs/dev/specs/p13-poc-go-no-go.md`
-- Create: `docs/dev/plans/p13-poc-go-no-go-plan.md`
+- Create: `docs/dev/specs/wbs-1.0/p13-poc-go-no-go.md`
+- Create: `docs/dev/plans/wbs-1.0/p13-poc-go-no-go-plan.md`
 - Create: `docs/reports/experiments/poc_go_no_go.md`
 - Create: `docs/dev/decisions/0001-poc-continue-with-scope-change.md`
 - Create: `docs/reviews/code/2026-06-26-p13-poc-go-no-go-review.md`

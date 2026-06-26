@@ -29,3 +29,5 @@
 - Completed P11 Calibration / Rule Tuning with hard-gate selection, synthetic best config report, freeze checksums, config metadata, CLI, and tests.
 - Completed P12 Optional Teacher-Force Rescore Design with no-current-MVP decision and follow-up WBS outline.
 - Completed P13 PoC Go / No-Go Report with Continue-with-scope-change decision, ADR, unresolved risk summary, and follow-up WBS outline.
+- Reorganized phase specs/plans under `docs/dev/specs/wbs-1.0/`, `docs/dev/plans/wbs-1.0/`, and `docs/dev/specs/wbs-2.0/`.
+- Added WBS 2.0 for real audio/text inventory, misrecognition pair mining, real HF N-best extraction, targetability, correction evaluation, calibration, and PoC v2 decision.

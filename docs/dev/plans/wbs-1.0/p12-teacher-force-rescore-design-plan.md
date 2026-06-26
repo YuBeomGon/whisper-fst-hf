@@ -14,8 +14,8 @@
 
 ## Files
 
-- Create: `docs/dev/specs/p12-teacher-force-rescore-design.md`
-- Create: `docs/dev/plans/p12-teacher-force-rescore-design-plan.md`
+- Create: `docs/dev/specs/wbs-1.0/p12-teacher-force-rescore-design.md`
+- Create: `docs/dev/plans/wbs-1.0/p12-teacher-force-rescore-design-plan.md`
 - Create: `docs/reviews/code/2026-06-26-p12-teacher-force-rescore-design-review.md`
 - Modify: `docs/wbs.md`
 - Modify: `docs/status.md`

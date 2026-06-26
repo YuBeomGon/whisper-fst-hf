@@ -5,9 +5,18 @@
 ## Current SSOT
 
 - `docs/dev/specs/project-design.md`: 전체 프로젝트 설계 기준
-- `docs/wbs.md`: phase, 산출물, 완료 기준 기준
+- `docs/wbs.md`: WBS 1.0 synthetic/mock PoC 완료 이력
+- `docs/wbs-2.0-real-hf-dataset.md`: WBS 2.0 실제 data/pair mining/HF 평가 실행 기준
 - `docs/status.md`: 현재 상태와 다음 액션
 - `docs/CHANGELOG.md`: 문서/구현 변경 이력
+
+## Development Specs / Plans
+
+- `docs/dev/specs/project-design.md`: project-level current design
+- `docs/dev/specs/wbs-1.0/`: WBS 1.0 phase specs
+- `docs/dev/plans/wbs-1.0/`: WBS 1.0 implementation plans
+- `docs/dev/specs/wbs-2.0/`: WBS 2.0 phase/design specs
+- `docs/dev/plans/wbs-2.0/`: WBS 2.0 implementation plans
 
 ## Operations
 

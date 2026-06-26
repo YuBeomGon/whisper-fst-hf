@@ -41,5 +41,6 @@ uv run --group dev pytest
 ## 5. Documentation
 
 - 설계 변경은 `docs/dev/specs/project-design.md` 또는 관련 `docs/ops/**`에 반영한다.
-- 실행 순서 변경은 `docs/wbs.md`에 반영한다.
+- WBS 1.0 이력 변경은 `docs/wbs.md`, WBS 2.0 실행 순서 변경은
+  `docs/wbs-2.0-real-hf-dataset.md`에 반영한다.
 - 실험 결과는 `docs/reports/**`에 둔다.

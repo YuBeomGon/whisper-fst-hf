@@ -12,8 +12,8 @@ Reviewed P2 implementation artifacts:
 - `scripts/probe_fst_backend.py`
 - `tests/test_fst_backend_smoke.py`
 - `docs/reports/probes/fst_backend_feasibility.md`
-- `docs/dev/specs/p2-fst-backend-feasibility.md`
-- `docs/dev/plans/p2-fst-backend-feasibility-plan.md`
+- `docs/dev/specs/wbs-1.0/p2-fst-backend-feasibility.md`
+- `docs/dev/plans/wbs-1.0/p2-fst-backend-feasibility-plan.md`
 
 ## Findings
 
