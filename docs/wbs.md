@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 13
+- version: 14
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0-P11 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0-P12 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -19,7 +19,8 @@
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
 P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
 P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor, P8 targetability probe,
-P9 evaluation harness, P10 synthetic offline MVP pipeline, P11 calibration selection이 있다. 이후 구현은 이 WBS의 phase를
+P9 evaluation harness, P10 synthetic offline MVP pipeline, P11 calibration selection,
+P12 teacher-force rescore decision이 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -706,7 +707,7 @@ ops 승격 후보:
 - domain metric 개선과 free-talk risk가 함께 보고됨
 - tuning 후 regression tests 통과
 
-### P12. Optional Teacher-Force Rescore Design - todo M
+### P12. Optional Teacher-Force Rescore Design - done M
 
 목표: N-best + WFST만으로 부족할 경우 teacher-forcing rescore를 추가할지 판단한다.
 
@@ -715,6 +716,8 @@ branch: `wbs/P12-teacher-force-rescore-design`
 spec: `docs/dev/specs/p12-teacher-force-rescore-design.md`
 plan: `docs/dev/plans/p12-teacher-force-rescore-design-plan.md`
 loop level: Level 1
+result: 현재 synthetic evidence 기준 teacher-force rescore는 current MVP scope에 추가하지 않는 것으로 결정했다.
+필요 시 후속 WBS input/output/metric/latency gate를 정의했다.
 
 예상 산출물:
 

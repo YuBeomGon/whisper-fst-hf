@@ -9,7 +9,8 @@ P3 Core Contracts / DTO / Config, P3.5 Rule Source Audit / Seed Rule Review,
 P4 Normalization / Protection Layer, P5 Synthetic N-best WFST Composition MVP,
 P6 Correction Safety / Trace / Domain Gating, P7 Hugging Face Whisper N-best Extractor,
 P8 HF N-best Targetability Probe, P9 Evaluation Harness,
-P10 End-to-End Offline MVP Run, P11 Calibration / Rule Tuning을 완료했다.
+P10 End-to-End Offline MVP Run, P11 Calibration / Rule Tuning,
+P12 Optional Teacher-Force Rescore Design을 완료했다.
 
 현재 기준 문서:
 
@@ -37,9 +38,10 @@ P10 End-to-End Offline MVP Run, P11 Calibration / Rule Tuning을 완료했다.
 | P9 Evaluation Harness | done | manifest validation, metrics, A/B/C/D report 구현 |
 | P10 End-to-End Offline MVP Run | done | synthetic offline pipeline report/manifest 생성 |
 | P11 Calibration / Rule Tuning | done | hard-gate 기반 synthetic best config/freeze report 생성 |
+| P12 Optional Teacher-Force Rescore Design | done | current MVP scope에는 rescore 미추가 결정 |
 
 ## Next Actions
 
-1. P12 Optional Teacher-Force Rescore Design을 시작한다.
-2. N-best + WFST fallback 결과 기준 rescore 필요 여부를 판단한다.
-3. 구현이 필요하면 후속 WBS input/output/metric을 정의한다.
+1. P13 PoC Go / No-Go Report를 시작한다.
+2. P2-P12 evidence를 종합해 Go / No-Go / Continue-with-scope-change 중 하나를 판정한다.
+3. unresolved risk와 후속 WBS를 정리한다.

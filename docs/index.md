@@ -46,6 +46,7 @@
 - `docs/reviews/code/2026-06-26-p9-evaluation-harness-review.md`: P9 구현/review 기록
 - `docs/reviews/code/2026-06-26-p10-offline-mvp-run-review.md`: P10 구현/review 기록
 - `docs/reviews/code/2026-06-26-p11-calibration-rule-tuning-review.md`: P11 구현/review 기록
+- `docs/reviews/code/2026-06-26-p12-teacher-force-rescore-design-review.md`: P12 구현/review 기록
 
 ## Assets
 
