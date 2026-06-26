@@ -114,7 +114,7 @@ WBS 2.0은 파일 단위 split을 먼저 고정한다.
 | P16 SRT Run Inventory / Matching | done | `wbs/v2/P16-srt-run-inventory-matching` |
 | P17 Misrecognition Pair Mining | done | `wbs/v2/P17-misrecognition-pair-mining` |
 | P18 Pair Review / Rule Source Audit v2 | done | `wbs/v2/P18-pair-review-rule-source-audit-v2` |
-| P19 Real HF N-best Extraction | pending | `wbs/v2/P19-real-hf-nbest-extraction` |
+| P19 Real HF N-best Extraction | blocked | `wbs/v2/P19-real-hf-nbest-extraction` |
 | P20 Real N-best Targetability | pending | `wbs/v2/P20-real-nbest-targetability` |
 | P21 Leakage-safe Correction Evaluation | pending | `wbs/v2/P21-leakage-safe-correction-eval` |
 | P22 Calibration / Safety Sweep | pending | `wbs/v2/P22-calibration-safety-sweep` |
@@ -353,6 +353,11 @@ result: P17 후보 104,924개를 split/provenance/risk/support/rewrite-shape 기
 `correction_rules_seed_v2.csv`는 header-only local artifact이며, downstream 평가는 이 결과를 반영해 수동
 검토 또는 seed source 보강 후 진행해야 한다.
 
+manual confirmation update: P18 이후 사용자 검토 흐름에서 49개 `wrong -> right` pair를 확정했고,
+로컬 ignored artifact로 `outputs/pair_mining/confirmed_misrecognition_pairs.csv`와
+`outputs/pair_mining/correction_rules_confirmed_v2.csv`를 생성했다. 모든 확정 rule은 `optional`이며
+동일 pair와 duplicate wrong 충돌은 없다.
+
 outputs:
 
 - `src/whisper_wfst/pair_review.py`
@@ -387,7 +392,7 @@ DoD:
 
 ---
 
-## P19. Real HF N-best Extraction
+## P19. Real HF N-best Extraction - blocked
 
 목표: 실제 `_l` audio를 HF Transformers Whisper에 넣어 beam 20 / num hypotheses 20 artifact를 만든다.
 
@@ -398,6 +403,21 @@ branch: `wbs/v2/P19-real-hf-nbest-extraction`
 spec: `docs/dev/specs/wbs-2.0/p19-real-hf-nbest-extraction.md`
 
 plan: `docs/dev/plans/wbs-2.0/p19-real-hf-nbest-extraction-plan.md`
+
+input: P19는 P14 file-stem audio inventory가 아니라 AIG HF chunk dataset을 사용한다.
+
+```text
+/data/MyProject/stt/data-gen/aig-audio-3/data/processed/hf_dataset
+```
+
+dataset result: system Python에서 `datasets.load_from_disk`로 dataset을 확인했다. `train` 2,556 rows,
+`validation` 424 rows이며 `audio`는 raw float list, `sampling_rate`는 16,000이다. P19 기본 split은
+`validation`이다.
+
+runtime result: system Python에는 `datasets`, `transformers`, `torch`, `numpy`가 있으나 `uv` test
+environment에는 없다. 현재 machine은 CUDA가 없고, `openai/whisper-large-v3` beam 20 / return 20 CPU
+generation은 validation 1.72초 chunk 1개도 120초 이상 완료되지 않아 중단했다. 따라서 P19는 hardware/runtime
+blocker로 멈춘다.
 
 outputs:
 
