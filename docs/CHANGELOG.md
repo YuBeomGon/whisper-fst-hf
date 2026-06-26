@@ -19,3 +19,4 @@
 - Completed P2 FST Backend Feasibility with a structured Pynini availability probe, CLI report writer, tests, and current-environment blocker report.
 - Completed P3 Core Contracts / DTO / Config with validated DTOs, JSON/JSONL artifact IO, CSV rule IO, schema docs, backend fail-fast config, and committed fixtures.
 - Completed P3.5 Rule Source Audit / Seed Rule Review with provenance audit logic, safe-only seed CSV generation, leakage/risk report, CLI, and tests.
+- Completed P4 Normalization / Protection Layer with NFC normalization, structured protected spans, external span protection, restore roundtrip, and tests.

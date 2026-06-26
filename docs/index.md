@@ -31,6 +31,7 @@
 - `docs/reviews/code/2026-06-26-p2-fst-backend-feasibility-review.md`: P2 구현/review 기록
 - `docs/reviews/code/2026-06-26-p3-core-contracts-review.md`: P3 구현/review 기록
 - `docs/reviews/code/2026-06-26-p3.5-rule-source-audit-review.md`: P3.5 구현/review 기록
+- `docs/reviews/code/2026-06-26-p4-normalization-protection-review.md`: P4 구현/review 기록
 
 ## Assets
 
