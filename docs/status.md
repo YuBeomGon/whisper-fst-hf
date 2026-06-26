@@ -7,7 +7,7 @@
 P0 Governance / Docs Scaffold, P1 Python Scaffold / Environment, P2 FST Backend Feasibility,
 P3 Core Contracts / DTO / Config, P3.5 Rule Source Audit / Seed Rule Review,
 P4 Normalization / Protection Layer, P5 Synthetic N-best WFST Composition MVP,
-P6 Correction Safety / Trace / Domain Gating을 완료했다.
+P6 Correction Safety / Trace / Domain Gating, P7 Hugging Face Whisper N-best Extractor를 완료했다.
 
 현재 기준 문서:
 
@@ -30,9 +30,10 @@ P6 Correction Safety / Trace / Domain Gating을 완료했다.
 | P4 Normalization / Protection Layer | done | NFC normalization과 protected span restore 구현 |
 | P5 Synthetic N-best WFST Composition MVP | done | Pynini unavailable 기준 phrase-rule fallback composition 구현 |
 | P6 Correction Safety / Trace / Domain Gating | done | domain gate, margin, trace, free-talk safety smoke 구현 |
+| P7 Hugging Face Whisper N-best Extractor | done | mocked HF generation에서 N-best artifact/report 생성 |
 
 ## Next Actions
 
-1. P7 Hugging Face Whisper N-best Extractor를 시작한다.
-2. mocked HF generation path로 artifact contract와 score metadata를 고정한다.
-3. 실제 model/audio smoke는 환경 가능 여부에 따라 P7 report에 residual risk로 남긴다.
+1. P8 HF N-best Targetability Probe를 시작한다.
+2. HF N-best artifact와 reference로 unique count, oracle, seed wrong-surface ratio를 계산한다.
+3. targetability가 낮으면 P10은 negative evidence run으로 진행한다.

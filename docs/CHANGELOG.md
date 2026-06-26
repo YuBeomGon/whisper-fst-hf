@@ -22,3 +22,4 @@
 - Completed P4 Normalization / Protection Layer with NFC normalization, structured protected spans, external span protection, restore roundtrip, and tests.
 - Completed P5 Synthetic N-best WFST Composition MVP with a Pynini-independent phrase-rule fallback engine, deterministic overlap handling, optional/obligatory semantics, fallback trace, and tests.
 - Completed P6 Correction Safety / Trace / Domain Gating with domain gate, margin decision, JSON traces, protected span ordering, free-talk safety smoke, and tests.
+- Completed P7 Hugging Face Whisper N-best Extractor with mocked HF generation conversion, score metadata, N-best diversity report, CLI, config, and tests.
