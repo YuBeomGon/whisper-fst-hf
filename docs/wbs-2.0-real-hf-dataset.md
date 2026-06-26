@@ -111,7 +111,7 @@ WBS 2.0은 파일 단위 split을 먼저 고정한다.
 | --- | --- | --- |
 | P14 Audio/Text Source Inventory | done | `wbs/v2/P14-audio-text-source-inventory` |
 | P15 Label Parser / Normalization v2 | done | `wbs/v2/P15-label-parser-normalization-v2` |
-| P16 SRT Run Inventory / Matching | pending | `wbs/v2/P16-srt-run-inventory-matching` |
+| P16 SRT Run Inventory / Matching | done | `wbs/v2/P16-srt-run-inventory-matching` |
 | P17 Misrecognition Pair Mining | pending | `wbs/v2/P17-misrecognition-pair-mining` |
 | P18 Pair Review / Rule Source Audit v2 | pending | `wbs/v2/P18-pair-review-rule-source-audit-v2` |
 | P19 Real HF N-best Extraction | pending | `wbs/v2/P19-real-hf-nbest-extraction` |
@@ -230,7 +230,7 @@ DoD:
 
 ---
 
-## P16. SRT Run Inventory / Matching
+## P16. SRT Run Inventory / Matching - done
 
 목표: 모든 `_l.srt` run을 inventory하고 label/source file과 매칭한다.
 
@@ -241,6 +241,9 @@ branch: `wbs/v2/P16-srt-run-inventory-matching`
 spec: `docs/dev/specs/wbs-2.0/p16-srt-run-inventory-matching.md`
 
 plan: `docs/dev/plans/wbs-2.0/p16-srt-run-inventory-matching-plan.md`
+
+result: 실제 `debug/output/**/*_l.srt` 4,655개를 catalog했다. 전부 label stem과 매칭됐고, timestamp가
+없는 invalid SRT 131개는 pair mining 입력에서 제외할 수 있도록 flag로 기록했다. unique run은 167개다.
 
 outputs:
 

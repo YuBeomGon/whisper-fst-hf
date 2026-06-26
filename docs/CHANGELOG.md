@@ -33,3 +33,4 @@
 - Added WBS 2.0 for real audio/text inventory, misrecognition pair mining, real HF N-best extraction, targetability, correction evaluation, calibration, and PoC v2 decision.
 - Completed P14 Audio/Text Source Inventory with deterministic `_l` label/audio matching, split assignment, exclusion reporting, CLI, and tests.
 - Completed P15 Label Parser / Normalization v2 with indexed/fallback parsing, tag cleanup, angle correction normalization, aggregate audit report, CLI, fixtures, and tests.
+- Completed P16 SRT Run Inventory / Matching with `_l.srt` timestamp cataloging, label matching, run coverage report, CLI, and tests.
