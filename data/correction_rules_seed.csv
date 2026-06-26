@@ -1,0 +1,2 @@
+rule_id,wrong,right,mode,enabled,priority,cost,left_context,right_context,source
+R_SAFE_001,손해보혐,손해보험,optional,true,100,1.0,,,aligned_segment:aig_train:2

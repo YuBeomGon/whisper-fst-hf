@@ -5,7 +5,7 @@
 ## Current State
 
 P0 Governance / Docs Scaffold, P1 Python Scaffold / Environment, P2 FST Backend Feasibility,
-P3 Core Contracts / DTO / Config를 완료했다.
+P3 Core Contracts / DTO / Config, P3.5 Rule Source Audit / Seed Rule Review를 완료했다.
 
 현재 기준 문서:
 
@@ -24,9 +24,10 @@ P3 Core Contracts / DTO / Config를 완료했다.
 | P1 Python Scaffold / Environment | done | Python package scaffold와 import smoke test 생성 |
 | P2 FST Backend Feasibility | done | 현재 uv/Python 3.12.4 환경에서 `pynini` unavailable |
 | P3 Core Contracts / DTO / Config | done | DTO, schema, config, JSON/JSONL/CSV IO helper 생성 |
+| P3.5 Rule Source Audit / Seed Rule Review | done | safe seed 1개, review optional 1개, disabled 3개로 분리 |
 
 ## Next Actions
 
-1. P3.5 Rule Source Audit / Seed Rule Review를 시작한다.
-2. correction rule seed provenance와 final eval leakage risk를 분리한다.
+1. P4 Normalization / Protection Layer를 시작한다.
+2. Unicode NFC normalization과 protected span roundtrip을 구현한다.
 3. P5 composition 구현 전 Pynini 설치 경로 확정 또는 fallback 전략을 다시 결정한다.

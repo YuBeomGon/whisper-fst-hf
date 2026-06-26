@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 4
+- version: 5
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0/P1/P2/P3 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0/P1/P2/P3/P3.5 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -16,7 +16,8 @@
 이 문서는 Whisper WFST 프로젝트의 실행 척추다. 설계 본문을 길게 담기보다 phase 순서, 상태,
 의존성, 크기, branch/spec/plan/report 산출물, 완료 기준을 관리한다.
 
-현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract가 있다. 이후 구현은 이 WBS의 phase를
+현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
+P3.5 rule source audit가 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -260,7 +261,7 @@ ops 승격 후보:
 - sample N-best artifact와 sample rule CSV가 test fixture로 존재함
 - schema 문서와 DTO validation이 서로 모순되지 않음
 
-### P3.5. Rule Source Audit / Seed Rule Review - todo M
+### P3.5. Rule Source Audit / Seed Rule Review - done M
 
 목표: correction rule seed가 어떤 데이터에서 왔는지 검증하고, final eval leakage 없이 안전한 seed만 분리한다.
 
@@ -269,6 +270,8 @@ branch: `wbs/P3.5-rule-source-audit`
 spec: `docs/dev/specs/p3.5-rule-source-audit.md`
 plan: `docs/dev/plans/p3.5-rule-source-audit-plan.md`
 loop level: Level 1
+result: rule source candidate JSONL을 audit해 safe seed, review optional, disabled 후보를 분리했다.
+final eval 유래, 숫자/PII, 긴 script span rule은 safe-only seed에서 제외했다.
 
 예상 산출물:
 
