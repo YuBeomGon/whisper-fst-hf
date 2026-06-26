@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+
+# Local environment
+.env
+.env.*
+.git/
+
+# Large/local artifacts
+outputs/*
+!outputs/.gitkeep
+models/
+checkpoints/
+*.wav
+*.mp3
+*.flac
+*.srt
+*.jsonl.gz
+
+# Data subtrees that may contain large generated artifacts
+data/raw/
+data/processed/
