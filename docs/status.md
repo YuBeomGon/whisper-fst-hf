@@ -8,7 +8,7 @@ P0 Governance / Docs Scaffold, P1 Python Scaffold / Environment, P2 FST Backend 
 P3 Core Contracts / DTO / Config, P3.5 Rule Source Audit / Seed Rule Review,
 P4 Normalization / Protection Layer, P5 Synthetic N-best WFST Composition MVP,
 P6 Correction Safety / Trace / Domain Gating, P7 Hugging Face Whisper N-best Extractor,
-P8 HF N-best Targetability Probe를 완료했다.
+P8 HF N-best Targetability Probe, P9 Evaluation Harness를 완료했다.
 
 현재 기준 문서:
 
@@ -33,9 +33,10 @@ P8 HF N-best Targetability Probe를 완료했다.
 | P6 Correction Safety / Trace / Domain Gating | done | domain gate, margin, trace, free-talk safety smoke 구현 |
 | P7 Hugging Face Whisper N-best Extractor | done | mocked HF generation에서 N-best artifact/report 생성 |
 | P8 HF N-best Targetability Probe | done | N-best oracle/seed surface targetability report 생성 |
+| P9 Evaluation Harness | done | manifest validation, metrics, A/B/C/D report 구현 |
 
 ## Next Actions
 
-1. P9 Evaluation Harness를 시작한다.
-2. CER/WER, domain accuracy, correction precision/recall, free-talk safety metric을 구현한다.
-3. A/B/C/D comparison report format을 고정한다.
+1. P10 End-to-End Offline MVP Run을 시작한다.
+2. committed fixture 기반 offline pipeline을 재현하고 report/manifest를 남긴다.
+3. 실제 audio/model artifact가 없으면 synthetic offline MVP로 residual risk를 명시한다.

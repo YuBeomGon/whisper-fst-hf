@@ -24,3 +24,4 @@
 - Completed P6 Correction Safety / Trace / Domain Gating with domain gate, margin decision, JSON traces, protected span ordering, free-talk safety smoke, and tests.
 - Completed P7 Hugging Face Whisper N-best Extractor with mocked HF generation conversion, score metadata, N-best diversity report, CLI, config, and tests.
 - Completed P8 HF N-best Targetability Probe with CER/WER oracle metrics, domain oracle, seed wrong-surface ratios, leakage policy report, CLI, and tests.
+- Completed P9 Evaluation Harness with manifest validation, CER/WER, domain/oracle/safety metrics, A/B/C/D report, CLI, and tests.

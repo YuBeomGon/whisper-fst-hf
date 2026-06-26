@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 10
+- version: 11
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5/P6/P7/P8 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5/P6/P7/P8/P9 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -18,7 +18,8 @@
 
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
 P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
-P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor, P8 targetability probe가 있다. 이후 구현은 이 WBS의 phase를
+P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor, P8 targetability probe,
+P9 evaluation harness가 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -553,7 +554,7 @@ ops 승격 후보:
 - targetability가 낮으면 P10은 negative evidence run으로만 진행하거나 범위를 재검토함
 - final eval leakage 금지 정책이 report에 반영됨
 
-### P9. Evaluation Harness - todo L
+### P9. Evaluation Harness - done L
 
 목표: correction 효과와 risk를 offline metric으로 비교한다.
 
@@ -562,6 +563,8 @@ branch: `wbs/P9-evaluation-harness`
 spec: `docs/dev/specs/p9-evaluation-harness.md`
 plan: `docs/dev/plans/p9-evaluation-harness-plan.md`
 loop level: Level 2
+result: evaluation manifest validation, CER/WER, domain accuracy, N-best oracle, correction precision/recall,
+overcorrection, free-talk safety metrics, A/B/C/D report format을 구현했다.
 
 예상 산출물:
 

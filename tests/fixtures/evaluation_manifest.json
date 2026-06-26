@@ -1,0 +1,30 @@
+[
+  {
+    "segment_id": "eval-seg-001",
+    "audio_ref": "eval.wav",
+    "source_wav": "eval_l.wav",
+    "source_start": 0.0,
+    "source_end": 2.0,
+    "split": "dev",
+    "channel": "l",
+    "is_script_span": true,
+    "is_free_talk": false,
+    "ref_text": "손해보험 가입",
+    "domain_terms": ["손해보험"],
+    "allowed_rules": ["R_SAMPLE_001"]
+  },
+  {
+    "segment_id": "eval-seg-002",
+    "audio_ref": "free.wav",
+    "source_wav": "free_l.wav",
+    "source_start": 2.0,
+    "source_end": 4.0,
+    "split": "dev",
+    "channel": "l",
+    "is_script_span": false,
+    "is_free_talk": true,
+    "ref_text": "안녕하세요",
+    "domain_terms": [],
+    "allowed_rules": []
+  }
+]

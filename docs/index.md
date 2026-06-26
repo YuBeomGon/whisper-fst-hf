@@ -27,6 +27,7 @@
 - `docs/reports/probes/free_talk_safety_smoke.md`: P6 free-talk domain gate safety smoke 결과
 - `docs/reports/probes/hf_nbest_smoke.md`: P7 mocked HF N-best artifact smoke 결과
 - `docs/reports/probes/nbest_targetability_probe.md`: P8 N-best targetability probe 결과
+- `docs/reports/probes/evaluation_baseline.md`: P9 synthetic evaluation baseline 결과
 
 ## Reviews
 
@@ -39,6 +40,7 @@
 - `docs/reviews/code/2026-06-26-p6-correction-safety-trace-domain-gating-review.md`: P6 구현/review 기록
 - `docs/reviews/code/2026-06-26-p7-hf-nbest-extractor-review.md`: P7 구현/review 기록
 - `docs/reviews/code/2026-06-26-p8-hf-nbest-targetability-review.md`: P8 구현/review 기록
+- `docs/reviews/code/2026-06-26-p9-evaluation-harness-review.md`: P9 구현/review 기록
 
 ## Assets
 
