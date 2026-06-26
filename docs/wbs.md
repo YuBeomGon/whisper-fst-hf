@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 14
+- version: 15
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0-P12 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0-P13 완료, PoC decision은 Continue-with-scope-change
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -20,8 +20,7 @@
 P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
 P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor, P8 targetability probe,
 P9 evaluation harness, P10 synthetic offline MVP pipeline, P11 calibration selection,
-P12 teacher-force rescore decision이 있다. 이후 구현은 이 WBS의 phase를
-따라 진행한다.
+P12 teacher-force rescore decision, P13 Go/No-Go report가 있다. 이 WBS의 initial MVP phase는 완료됐다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
 
@@ -745,7 +744,7 @@ ops 승격 후보:
 - rescore가 필요한지 yes/no 판단이 근거와 함께 남음
 - 구현한다면 후속 WBS input/output/metric이 정의됨
 
-### P13. PoC Go / No-Go Report - todo M
+### P13. PoC Go / No-Go Report - done M
 
 목표: MVP 결과를 종합해 다음 단계 진행 여부를 판단한다.
 
@@ -754,6 +753,8 @@ branch: `wbs/P13-poc-go-no-go`
 spec: `docs/dev/specs/p13-poc-go-no-go.md`
 plan: `docs/dev/plans/p13-poc-go-no-go-plan.md`
 loop level: Level 1
+result: `Continue-with-scope-change`로 판정했다. Synthetic evidence는 engineering feasibility로만 해석하고,
+real HF audio evaluation과 Pynini/fallback backend decision을 후속 WBS로 분리했다.
 
 예상 산출물:
 

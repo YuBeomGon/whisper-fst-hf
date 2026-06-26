@@ -28,3 +28,4 @@
 - Completed P10 End-to-End Offline MVP Run with synthetic pipeline, correction trace output, evaluation report, checksum manifest, no-production-claim report, CLI, and tests.
 - Completed P11 Calibration / Rule Tuning with hard-gate selection, synthetic best config report, freeze checksums, config metadata, CLI, and tests.
 - Completed P12 Optional Teacher-Force Rescore Design with no-current-MVP decision and follow-up WBS outline.
+- Completed P13 PoC Go / No-Go Report with Continue-with-scope-change decision, ADR, unresolved risk summary, and follow-up WBS outline.

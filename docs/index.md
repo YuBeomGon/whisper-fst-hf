@@ -31,6 +31,8 @@
 - `docs/reports/experiments/offline_mvp_run.md`: P10 synthetic offline MVP run 결과
 - `docs/reports/experiments/offline_mvp_manifest.json`: P10 offline MVP artifact/checksum manifest
 - `docs/reports/experiments/correction_calibration.md`: P11 calibration and freeze checksum report
+- `docs/reports/experiments/poc_go_no_go.md`: P13 final PoC decision report
+- `docs/dev/decisions/0001-poc-continue-with-scope-change.md`: P13 ADR
 
 ## Reviews
 
@@ -47,6 +49,7 @@
 - `docs/reviews/code/2026-06-26-p10-offline-mvp-run-review.md`: P10 구현/review 기록
 - `docs/reviews/code/2026-06-26-p11-calibration-rule-tuning-review.md`: P11 구현/review 기록
 - `docs/reviews/code/2026-06-26-p12-teacher-force-rescore-design-review.md`: P12 구현/review 기록
+- `docs/reviews/code/2026-06-26-p13-poc-go-no-go-review.md`: P13 구현/review 기록
 
 ## Assets
 
