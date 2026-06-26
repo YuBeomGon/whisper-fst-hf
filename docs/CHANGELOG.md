@@ -26,3 +26,4 @@
 - Completed P8 HF N-best Targetability Probe with CER/WER oracle metrics, domain oracle, seed wrong-surface ratios, leakage policy report, CLI, and tests.
 - Completed P9 Evaluation Harness with manifest validation, CER/WER, domain/oracle/safety metrics, A/B/C/D report, CLI, and tests.
 - Completed P10 End-to-End Offline MVP Run with synthetic pipeline, correction trace output, evaluation report, checksum manifest, no-production-claim report, CLI, and tests.
+- Completed P11 Calibration / Rule Tuning with hard-gate selection, synthetic best config report, freeze checksums, config metadata, CLI, and tests.

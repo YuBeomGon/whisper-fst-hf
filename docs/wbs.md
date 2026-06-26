@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 12
+- version: 13
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0-P10 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0-P11 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -19,7 +19,7 @@
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
 P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
 P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor, P8 targetability probe,
-P9 evaluation harness, P10 synthetic offline MVP pipeline이 있다. 이후 구현은 이 WBS의 phase를
+P9 evaluation harness, P10 synthetic offline MVP pipeline, P11 calibration selection이 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -656,7 +656,7 @@ ops 승격 후보:
 - repository contains reports/manifests only, not large artifacts
 - no full-quality production claim is made
 
-### P11. Calibration / Rule Tuning - todo M
+### P11. Calibration / Rule Tuning - done M
 
 목표: lambda, margin, rule cost, risky rule policy를 evaluation 결과로 조정한다.
 
@@ -665,6 +665,8 @@ branch: `wbs/P11-calibration-rule-tuning`
 spec: `docs/dev/specs/p11-calibration-rule-tuning.md`
 plan: `docs/dev/plans/p11-calibration-rule-tuning-plan.md`
 loop level: Level 2
+result: synthetic sweep 후보의 hard gate filtering, best config selection, calibration report, freeze checksum,
+selected config metadata를 구현했다.
 
 예상 산출물:
 

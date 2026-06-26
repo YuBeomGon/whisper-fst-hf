@@ -15,6 +15,14 @@ safety:
   margin: 0.25
   free_talk_allowed_correction_rate: 0.0
 
+calibration:
+  selected_config_id: safe_only_margin_025
+  lambda_weight: 1.0
+  rule_policy: safe_only
+  domain_gate_policy: script_span_only
+  correction_cost: 1.0
+  keep_cost: 0.0
+
 rules:
   path: data/correction_rules.csv
   reserved_context_fields:
