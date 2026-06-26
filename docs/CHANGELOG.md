@@ -32,3 +32,4 @@
 - Reorganized phase specs/plans under `docs/dev/specs/wbs-1.0/`, `docs/dev/plans/wbs-1.0/`, and `docs/dev/specs/wbs-2.0/`.
 - Added WBS 2.0 for real audio/text inventory, misrecognition pair mining, real HF N-best extraction, targetability, correction evaluation, calibration, and PoC v2 decision.
 - Completed P14 Audio/Text Source Inventory with deterministic `_l` label/audio matching, split assignment, exclusion reporting, CLI, and tests.
+- Completed P15 Label Parser / Normalization v2 with indexed/fallback parsing, tag cleanup, angle correction normalization, aggregate audit report, CLI, fixtures, and tests.

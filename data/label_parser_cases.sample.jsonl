@@ -1,0 +1,3 @@
+{"case_id":"indexed_tags","text":"1\n안녕하세요 [NAME]\n2\n보험료 안내입니다","expected_flags":[]}
+{"case_id":"angle_correction","text":"1\n치아 <보혐>/<보험> 안내입니다\n2\n확인합니다","expected_normalized_contains":"보험"}
+{"case_id":"no_index","text":"안녕하세요\n보험 안내입니다","expected_flags":["no_index_fallback"]}

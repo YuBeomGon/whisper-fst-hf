@@ -110,7 +110,7 @@ WBS 2.0은 파일 단위 split을 먼저 고정한다.
 | Phase | Status | Branch |
 | --- | --- | --- |
 | P14 Audio/Text Source Inventory | done | `wbs/v2/P14-audio-text-source-inventory` |
-| P15 Label Parser / Normalization v2 | pending | `wbs/v2/P15-label-parser-normalization-v2` |
+| P15 Label Parser / Normalization v2 | done | `wbs/v2/P15-label-parser-normalization-v2` |
 | P16 SRT Run Inventory / Matching | pending | `wbs/v2/P16-srt-run-inventory-matching` |
 | P17 Misrecognition Pair Mining | pending | `wbs/v2/P17-misrecognition-pair-mining` |
 | P18 Pair Review / Rule Source Audit v2 | pending | `wbs/v2/P18-pair-review-rule-source-audit-v2` |
@@ -176,7 +176,7 @@ stop conditions:
 
 ---
 
-## P15. Label Parser / Normalization v2
+## P15. Label Parser / Normalization v2 - done
 
 목표: 47개 `_l.txt` label format variation을 처리하는 parser와 비교용 normalized reference text를 만든다.
 
@@ -187,6 +187,10 @@ branch: `wbs/v2/P15-label-parser-normalization-v2`
 spec: `docs/dev/specs/wbs-2.0/p15-label-parser-normalization-v2.md`
 
 plan: `docs/dev/plans/wbs-2.0/p15-label-parser-normalization-v2-plan.md`
+
+result: 실제 `_l.txt` label 47개를 모두 parser audit에 통과시켰다. no-index fallback 2개,
+index-not-first 1개, script tag imbalance 4개, too-short exclusion 4개를 집계했고, square tag와 standalone
+angle markup은 comparison text에서 제거하는 정책을 구현했다.
 
 outputs:
 

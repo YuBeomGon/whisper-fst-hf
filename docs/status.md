@@ -47,10 +47,10 @@ leakage-safe correction evaluation을 대상으로 진행 중이다.
 | P13 PoC Go / No-Go Report | done | Continue-with-scope-change 판정 |
 | WBS 2.0 Planning | done | 실제 audio/text, pair mining, real HF evaluation WBS 작성 |
 | P14 Audio/Text Source Inventory | done | `_l` label 47개, matched audio 36개, eligible 32개 집계 |
+| P15 Label Parser / Normalization v2 | done | `_l` label 47개 parser audit, tag/angle normalization 구현 |
 
 ## Next Actions
 
-1. P15 label parser / normalization v2를 구현한다.
-2. P16 SRT run inventory와 matching을 구현한다.
-3. P17-P18에서 오인식 pair 후보와 leakage-safe seed rule을 만든다.
-4. 실제 HF N-best smoke와 targetability를 실행한다.
+1. P16 SRT run inventory와 matching을 구현한다.
+2. P17-P18에서 오인식 pair 후보와 leakage-safe seed rule을 만든다.
+3. 실제 HF N-best smoke와 targetability를 실행한다.
