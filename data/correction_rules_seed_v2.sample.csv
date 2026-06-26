@@ -1,0 +1,2 @@
+rule_id,wrong,right,mode,enabled,priority,cost,left_context,right_context,source
+P18_P17_SAMPLE_001,손해보혐,손해보험,optional,true,100,1.0,,,pair_mining_v2:P17_SAMPLE_001:allowed_files=3:runs=3:splits=rule_mining

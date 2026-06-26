@@ -35,3 +35,4 @@
 - Completed P15 Label Parser / Normalization v2 with indexed/fallback parsing, tag cleanup, angle correction normalization, aggregate audit report, CLI, fixtures, and tests.
 - Completed P16 SRT Run Inventory / Matching with `_l.srt` timestamp cataloging, label matching, run coverage report, CLI, and tests.
 - Completed P17 Misrecognition Pair Mining with label/SRT phrase diff extraction, run/file/batch support aggregation, local ignored candidate artifacts, aggregate report, CLI, and tests.
+- Completed P18 Pair Review / Rule Source Audit v2 with split/risk/support/rewrite-shape audit, redacted review artifact, header-only conservative seed output, aggregate report, CLI, and tests.

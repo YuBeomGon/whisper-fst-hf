@@ -50,8 +50,9 @@ leakage-safe correction evaluation을 대상으로 진행 중이다.
 | P15 Label Parser / Normalization v2 | done | `_l` label 47개 parser audit, tag/angle normalization 구현 |
 | P16 SRT Run Inventory / Matching | done | `_l.srt` 4,655개 catalog, label matched 4,655개, invalid 131개 |
 | P17 Misrecognition Pair Mining | done | SRT 4,128개에서 pair 후보 104,924개 생성, P18 승격 감사 필요 |
+| P18 Pair Review / Rule Source Audit v2 | done | 자동 seed 0개, manual review 후보 394개로 보수적 감사 완료 |
 
 ## Next Actions
 
-1. P18에서 오인식 pair 후보를 leakage-safe seed rule로 감사/승격한다.
+1. P18 manual review 후보를 사람이 검토하거나 도메인 seed source를 보강한다.
 2. 실제 HF N-best smoke와 targetability를 실행한다.
