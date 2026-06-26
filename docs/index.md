@@ -24,6 +24,7 @@
 - `docs/reports/audits/wfst-domain-feasibility-research.md`: N-best + WFST 성능 가능성 및 리스크 deep research
 - `docs/reports/probes/fst_backend_feasibility.md`: P2 Pynini/OpenFST backend availability probe 결과
 - `docs/reports/probes/rule_source_audit.md`: P3.5 rule provenance, leakage, risk audit 결과
+- `docs/reports/probes/free_talk_safety_smoke.md`: P6 free-talk domain gate safety smoke 결과
 
 ## Reviews
 
@@ -33,6 +34,7 @@
 - `docs/reviews/code/2026-06-26-p3.5-rule-source-audit-review.md`: P3.5 구현/review 기록
 - `docs/reviews/code/2026-06-26-p4-normalization-protection-review.md`: P4 구현/review 기록
 - `docs/reviews/code/2026-06-26-p5-synthetic-nbest-wfst-review.md`: P5 구현/review 기록
+- `docs/reviews/code/2026-06-26-p6-correction-safety-trace-domain-gating-review.md`: P6 구현/review 기록
 
 ## Assets
 

@@ -4,6 +4,7 @@ from dataclasses import dataclass
 
 from whisper_wfst.correction_wfst import RuleApplicationCandidate, apply_rules_to_text
 from whisper_wfst.nbest_acceptor import build_nbest_acceptor, select_lowest_asr_cost
+from whisper_wfst.protect import ProtectedText
 from whisper_wfst.types import CorrectionRule, NBestArtifact
 
 
@@ -23,6 +24,8 @@ class CompositionResult:
 def compose_nbest_with_rules(
     artifact: NBestArtifact,
     rules: list[CorrectionRule],
+    *,
+    protected_text_by_rank: dict[int, ProtectedText] | None = None,
 ) -> CompositionResult:
     candidates = build_nbest_acceptor(artifact)
     no_rule_fallback = select_lowest_asr_cost(candidates)
@@ -41,7 +44,13 @@ def compose_nbest_with_rules(
             for rule in matching_rules
         ):
             branches = []
-        corrected_branch = apply_rules_to_text(candidate.text, matching_rules)[0]
+        corrected_branch = apply_rules_to_text(
+            candidate.text,
+            matching_rules,
+            protected_text=None
+            if protected_text_by_rank is None
+            else protected_text_by_rank.get(candidate.rank),
+        )[0]
         if corrected_branch.applied_rule_ids:
             branches.append(corrected_branch)
 

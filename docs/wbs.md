@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 7
+- version: 8
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5/P6 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -17,7 +17,8 @@
 의존성, 크기, branch/spec/plan/report 산출물, 완료 기준을 관리한다.
 
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
-P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback이 있다. 이후 구현은 이 WBS의 phase를
+P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
+P6 safety/domain gate/trace layer가 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -406,7 +407,7 @@ ops 승격 후보:
 - rule 미적용 시 lowest ASR cost hypothesis가 유지됨
 - composition failure fallback이 trace에 남음
 
-### P6. Correction Safety / Trace / Domain Gating - todo L
+### P6. Correction Safety / Trace / Domain Gating - done L
 
 목표: overcorrection 방지와 자유대화 보호 정책을 구현한다.
 
@@ -415,6 +416,7 @@ branch: `wbs/P6-correction-safety-trace-domain-gating`
 spec: `docs/dev/specs/p6-correction-safety-trace-domain-gating.md`
 plan: `docs/dev/plans/p6-correction-safety-trace-domain-gating-plan.md`
 loop level: Level 2
+result: domain gate, margin decision, protected span safety order, JSON trace, free-talk safety smoke를 구현했다.
 
 예상 산출물:
 

@@ -21,3 +21,4 @@
 - Completed P3.5 Rule Source Audit / Seed Rule Review with provenance audit logic, safe-only seed CSV generation, leakage/risk report, CLI, and tests.
 - Completed P4 Normalization / Protection Layer with NFC normalization, structured protected spans, external span protection, restore roundtrip, and tests.
 - Completed P5 Synthetic N-best WFST Composition MVP with a Pynini-independent phrase-rule fallback engine, deterministic overlap handling, optional/obligatory semantics, fallback trace, and tests.
+- Completed P6 Correction Safety / Trace / Domain Gating with domain gate, margin decision, JSON traces, protected span ordering, free-talk safety smoke, and tests.

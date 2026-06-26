@@ -10,6 +10,11 @@ backend:
   fallback: null
   blocker: "ModuleNotFoundError: No module named 'pynini'"
 
+safety:
+  domain_gate_enabled: true
+  margin: 0.25
+  free_talk_allowed_correction_rate: 0.0
+
 rules:
   path: data/correction_rules.csv
   reserved_context_fields:
