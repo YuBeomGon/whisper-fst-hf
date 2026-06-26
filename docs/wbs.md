@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 11
+- version: 12
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5/P6/P7/P8/P9 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0-P10 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -19,7 +19,7 @@
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
 P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback,
 P6 safety/domain gate/trace layer, P7 mocked HF N-best artifact extractor, P8 targetability probe,
-P9 evaluation harness가 있다. 이후 구현은 이 WBS의 phase를
+P9 evaluation harness, P10 synthetic offline MVP pipeline이 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -609,7 +609,7 @@ ops 승격 후보:
 - top1 + correction 비교군은 rank0 단일 hypothesis로 truncate한 artifact로 정의됨
 - free-talk safety metric이 별도로 출력됨
 
-### P10. End-to-End Offline MVP Run - todo L
+### P10. End-to-End Offline MVP Run - done L
 
 목표: 실제 또는 reviewed sample audio에서 N-best extraction부터 correction/evaluation까지 한 번에 재현한다.
 
@@ -618,6 +618,8 @@ branch: `wbs/P10-offline-mvp-run`
 spec: `docs/dev/specs/p10-offline-mvp-run.md`
 plan: `docs/dev/plans/p10-offline-mvp-run-plan.md`
 loop level: Level 2
+result: committed fixture 기반 offline MVP pipeline을 구현했다. targetability, correction trace, evaluation,
+output checksum manifest, no-production-claim report를 생성했다.
 
 예상 산출물:
 

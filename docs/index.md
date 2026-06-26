@@ -28,6 +28,8 @@
 - `docs/reports/probes/hf_nbest_smoke.md`: P7 mocked HF N-best artifact smoke 결과
 - `docs/reports/probes/nbest_targetability_probe.md`: P8 N-best targetability probe 결과
 - `docs/reports/probes/evaluation_baseline.md`: P9 synthetic evaluation baseline 결과
+- `docs/reports/experiments/offline_mvp_run.md`: P10 synthetic offline MVP run 결과
+- `docs/reports/experiments/offline_mvp_manifest.json`: P10 offline MVP artifact/checksum manifest
 
 ## Reviews
 
@@ -41,6 +43,7 @@
 - `docs/reviews/code/2026-06-26-p7-hf-nbest-extractor-review.md`: P7 구현/review 기록
 - `docs/reviews/code/2026-06-26-p8-hf-nbest-targetability-review.md`: P8 구현/review 기록
 - `docs/reviews/code/2026-06-26-p9-evaluation-harness-review.md`: P9 구현/review 기록
+- `docs/reviews/code/2026-06-26-p10-offline-mvp-run-review.md`: P10 구현/review 기록
 
 ## Assets
 
