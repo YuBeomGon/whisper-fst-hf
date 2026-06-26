@@ -13,7 +13,7 @@ P10 End-to-End Offline MVP Run, P11 Calibration / Rule Tuning,
 P12 Optional Teacher-Force Rescore Design, P13 PoC Go / No-Go Report를 완료했다.
 
 WBS 2.0은 실제 audio/text source inventory, label/SRT 기반 오인식 pair mining, 실제 HF N-best extraction,
-leakage-safe correction evaluation을 대상으로 작성 중이다.
+leakage-safe correction evaluation을 대상으로 진행 중이다.
 
 현재 기준 문서:
 
@@ -45,11 +45,12 @@ leakage-safe correction evaluation을 대상으로 작성 중이다.
 | P11 Calibration / Rule Tuning | done | hard-gate 기반 synthetic best config/freeze report 생성 |
 | P12 Optional Teacher-Force Rescore Design | done | current MVP scope에는 rescore 미추가 결정 |
 | P13 PoC Go / No-Go Report | done | Continue-with-scope-change 판정 |
-| WBS 2.0 Planning | draft | 실제 audio/text, pair mining, real HF evaluation WBS 작성 |
+| WBS 2.0 Planning | done | 실제 audio/text, pair mining, real HF evaluation WBS 작성 |
+| P14 Audio/Text Source Inventory | done | `_l` label 47개, matched audio 36개, eligible 32개 집계 |
 
 ## Next Actions
 
-1. WBS 2.0 문서를 review하고 P14부터 실행한다.
-2. `_l` audio/text source inventory와 split manifest를 만든다.
-3. label/SRT 기반 오인식 pair mining pipeline을 구현한다.
+1. P15 label parser / normalization v2를 구현한다.
+2. P16 SRT run inventory와 matching을 구현한다.
+3. P17-P18에서 오인식 pair 후보와 leakage-safe seed rule을 만든다.
 4. 실제 HF N-best smoke와 targetability를 실행한다.

@@ -109,7 +109,7 @@ WBS 2.0은 파일 단위 split을 먼저 고정한다.
 
 | Phase | Status | Branch |
 | --- | --- | --- |
-| P14 Audio/Text Source Inventory | pending | `wbs/v2/P14-audio-text-source-inventory` |
+| P14 Audio/Text Source Inventory | done | `wbs/v2/P14-audio-text-source-inventory` |
 | P15 Label Parser / Normalization v2 | pending | `wbs/v2/P15-label-parser-normalization-v2` |
 | P16 SRT Run Inventory / Matching | pending | `wbs/v2/P16-srt-run-inventory-matching` |
 | P17 Misrecognition Pair Mining | pending | `wbs/v2/P17-misrecognition-pair-mining` |
@@ -122,7 +122,7 @@ WBS 2.0은 파일 단위 split을 먼저 고정한다.
 
 ---
 
-## P14. Audio/Text Source Inventory
+## P14. Audio/Text Source Inventory - done
 
 목표: `_l` audio와 `_l` label을 file stem 기준으로 매칭하고, WBS 2.0에서 사용할 split manifest를 만든다.
 
@@ -133,6 +133,10 @@ branch: `wbs/v2/P14-audio-text-source-inventory`
 spec: `docs/dev/specs/wbs-2.0/p14-audio-text-source-inventory.md`
 
 plan: `docs/dev/plans/wbs-2.0/p14-audio-text-source-inventory-plan.md`
+
+result: `_l` label 47개, matched audio 36개, eligible 32개를 집계했다. missing audio 11개와 too-short label
+4개는 exclusion reason으로 기록했고, split은 file-level hash로 `rule_mining` 30개, `dev_review` 8개,
+`eval_holdout` 9개로 고정했다.
 
 outputs:
 
