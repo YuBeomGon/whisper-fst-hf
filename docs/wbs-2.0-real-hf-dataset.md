@@ -113,7 +113,7 @@ WBS 2.0은 파일 단위 split을 먼저 고정한다.
 | P15 Label Parser / Normalization v2 | done | `wbs/v2/P15-label-parser-normalization-v2` |
 | P16 SRT Run Inventory / Matching | done | `wbs/v2/P16-srt-run-inventory-matching` |
 | P17 Misrecognition Pair Mining | done | `wbs/v2/P17-misrecognition-pair-mining` |
-| P18 Pair Review / Rule Source Audit v2 | pending | `wbs/v2/P18-pair-review-rule-source-audit-v2` |
+| P18 Pair Review / Rule Source Audit v2 | done | `wbs/v2/P18-pair-review-rule-source-audit-v2` |
 | P19 Real HF N-best Extraction | pending | `wbs/v2/P19-real-hf-nbest-extraction` |
 | P20 Real N-best Targetability | pending | `wbs/v2/P20-real-nbest-targetability` |
 | P21 Leakage-safe Correction Evaluation | pending | `wbs/v2/P21-leakage-safe-correction-eval` |
@@ -336,7 +336,7 @@ stop conditions:
 
 ---
 
-## P18. Pair Review / Rule Source Audit v2
+## P18. Pair Review / Rule Source Audit v2 - done
 
 목표: pair candidate를 review/audit해서 leakage-safe `correction_rules_seed.csv`를 만든다.
 
@@ -347,6 +347,11 @@ branch: `wbs/v2/P18-pair-review-rule-source-audit-v2`
 spec: `docs/dev/specs/wbs-2.0/p18-pair-review-rule-source-audit-v2.md`
 
 plan: `docs/dev/plans/wbs-2.0/p18-pair-review-rule-source-audit-v2-plan.md`
+
+result: P17 후보 104,924개를 split/provenance/risk/support/rewrite-shape 기준으로 감사했다. 보수적 자동 승격
+정책에서는 seed optional/obligatory rule이 0개였고, 394개가 manual review 대상으로 남았다. 따라서
+`correction_rules_seed_v2.csv`는 header-only local artifact이며, downstream 평가는 이 결과를 반영해 수동
+검토 또는 seed source 보강 후 진행해야 한다.
 
 outputs:
 

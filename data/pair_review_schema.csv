@@ -1,0 +1,2 @@
+pair_id,review_class,reason,mode,support_run_count,support_file_count,support_batch_count,allowed_file_support,eval_holdout_file_support,source_splits,risk_flags,alignment_confidence
+P17_SAMPLE_001,optional,sufficient_allowed_support,optional,3,3,1,3,0,rule_mining,,0.8000
