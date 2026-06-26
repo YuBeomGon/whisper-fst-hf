@@ -15,6 +15,7 @@
 - `docs/ops/coding-conventions.md`: 코딩 및 테스트 원칙
 - `docs/ops/environment.md`: Python scaffold와 실행 명령
 - `docs/ops/phase-loop.md`: phase 실행 loop
+- `docs/ops/schema.md`: P3 current DTO, artifact, rule, backend status schema
 - `docs/ops/evaluation.md`: 평가 문서 entrypoint
 - `docs/ops/evaluation-calibration-design.md`: 평가 split, sweep, hard gate, best config 선택 규칙
 
@@ -27,6 +28,7 @@
 
 - `docs/reviews/design/seed-design-wbs-review.md`: 초기 design/WBS subagent review 기록
 - `docs/reviews/code/2026-06-26-p2-fst-backend-feasibility-review.md`: P2 구현/review 기록
+- `docs/reviews/code/2026-06-26-p3-core-contracts-review.md`: P3 구현/review 기록
 
 ## Assets
 

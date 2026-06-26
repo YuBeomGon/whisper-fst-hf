@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 3
+- version: 4
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0/P1/P2 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0/P1/P2/P3 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -16,7 +16,7 @@
 이 문서는 Whisper WFST 프로젝트의 실행 척추다. 설계 본문을 길게 담기보다 phase 순서, 상태,
 의존성, 크기, branch/spec/plan/report 산출물, 완료 기준을 관리한다.
 
-현재 repository에는 P0 governance 문서와 P1 Python scaffold가 있다. 이후 구현은 이 WBS의 phase를
+현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract가 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -205,7 +205,7 @@ ops 승격 후보:
 - no이면 대체 전략 또는 blocker가 명시됨
 - backend 결정이 P3 이후 구현 계획에 반영됨
 
-### P3. Core Contracts / DTO / Config - todo M
+### P3. Core Contracts / DTO / Config - done M
 
 목표: N-best artifact, correction rule, correction result trace의 current data contract를 코드와 문서로 고정한다.
 
@@ -214,6 +214,8 @@ branch: `wbs/P3-core-contracts`
 spec: `docs/dev/specs/p3-core-contracts-dto-config.md`
 plan: `docs/dev/plans/p3-core-contracts-dto-config-plan.md`
 loop level: Level 2
+result: N-best artifact, correction rule CSV, backend status, correction trace DTO와 JSON/JSONL/CSV IO helper를
+구현했다. P2의 Pynini unavailable 결과는 `configs/correction.yaml`과 `BackendStatus` contract에 반영했다.
 
 예상 산출물:
 

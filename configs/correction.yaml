@@ -1,0 +1,23 @@
+# P3 current contract config.
+# This project currently targets HF Transformers Whisper artifacts.
+runtime:
+  asr: hf-transformers
+
+backend:
+  name: pynini
+  available: false
+  fail_fast: true
+  fallback: null
+  blocker: "ModuleNotFoundError: No module named 'pynini'"
+
+rules:
+  path: data/correction_rules.csv
+  reserved_context_fields:
+    left_context: reject_non_empty
+    right_context: reject_non_empty
+
+artifact:
+  duplicate_hypothesis_key: normalized_text
+  duplicate_tiebreak:
+    - lowest_asr_cost
+    - lowest_rank

@@ -1,0 +1,44 @@
+{
+  "segment_id": "fixture-seg-001",
+  "model": "openai/whisper-large-v3",
+  "runtime": "hf-transformers",
+  "decode_config": {
+    "num_beams": 20,
+    "num_return_sequences": 20,
+    "output_scores": true
+  },
+  "hypotheses": [
+    {
+      "rank": 1,
+      "token_ids": [
+        101,
+        102
+      ],
+      "raw_text": "손해보혐을 가입하시겠습니까",
+      "normalized_text": "손해보혐을 가입하시겠습니까",
+      "score_source": "hf_transition_scores",
+      "score_is_logprob": true,
+      "length_penalty": 1.0,
+      "raw_logprob": -1.2,
+      "decoder_score": -1.2,
+      "asr_cost": 1.2
+    },
+    {
+      "rank": 2,
+      "token_ids": [
+        201,
+        202
+      ],
+      "raw_text": "손해보험을 가입하시겠습니까",
+      "normalized_text": "손해보험을 가입하시겠습니까",
+      "score_source": "hf_transition_scores",
+      "score_is_logprob": true,
+      "length_penalty": 1.0,
+      "raw_logprob": -1.6,
+      "decoder_score": -1.6,
+      "asr_cost": 1.6
+    }
+  ],
+  "created_at": "2026-06-26T12:00:00+09:00",
+  "audio_ref": "fixture.wav"
+}

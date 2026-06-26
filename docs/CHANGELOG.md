@@ -17,3 +17,4 @@
 - Updated project snapshot archive to include small `data/` files while excluding generated data subtrees.
 - Reformatted WBS phases to include branch, phase design spec, implementation plan, loop level, and ops promotion candidates.
 - Completed P2 FST Backend Feasibility with a structured Pynini availability probe, CLI report writer, tests, and current-environment blocker report.
+- Completed P3 Core Contracts / DTO / Config with validated DTOs, JSON/JSONL artifact IO, CSV rule IO, schema docs, backend fail-fast config, and committed fixtures.
