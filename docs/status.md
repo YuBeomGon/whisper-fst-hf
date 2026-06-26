@@ -6,7 +6,7 @@
 
 P0 Governance / Docs Scaffold, P1 Python Scaffold / Environment, P2 FST Backend Feasibility,
 P3 Core Contracts / DTO / Config, P3.5 Rule Source Audit / Seed Rule Review,
-P4 Normalization / Protection Layer를 완료했다.
+P4 Normalization / Protection Layer, P5 Synthetic N-best WFST Composition MVP를 완료했다.
 
 현재 기준 문서:
 
@@ -27,9 +27,10 @@ P4 Normalization / Protection Layer를 완료했다.
 | P3 Core Contracts / DTO / Config | done | DTO, schema, config, JSON/JSONL/CSV IO helper 생성 |
 | P3.5 Rule Source Audit / Seed Rule Review | done | safe seed 1개, review optional 1개, disabled 3개로 분리 |
 | P4 Normalization / Protection Layer | done | NFC normalization과 protected span restore 구현 |
+| P5 Synthetic N-best WFST Composition MVP | done | Pynini unavailable 기준 phrase-rule fallback composition 구현 |
 
 ## Next Actions
 
-1. P5 Synthetic N-best WFST Composition MVP를 시작한다.
-2. P2 결과에 따라 Pynini 전제 대신 phrase-rule fallback composition을 사용한다.
-3. optional identity bypass, overlapping rule order, no-path fallback을 test로 고정한다.
+1. P6 Correction Safety / Trace / Domain Gating을 시작한다.
+2. protect spans -> domain gate -> compose -> margin decision -> trace 순서를 고정한다.
+3. free-talk fixture에서 correction rate safety smoke를 생성한다.

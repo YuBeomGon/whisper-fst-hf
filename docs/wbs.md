@@ -1,8 +1,8 @@
 # Whisper WFST Project WBS
 
-- version: 6
+- version: 7
 - 최종 갱신: 2026-06-26
-- 현재 상태: P0/P1/P2/P3/P3.5/P4 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
+- 현재 상태: P0/P1/P2/P3/P3.5/P4/P5 완료, P2 결과는 현재 환경 기준 Pynini backend unavailable
 - 기준 설계: `docs/dev/specs/project-design.md`
 - 현재 PoC runtime: Hugging Face Transformers Whisper
 - 주요 reference:
@@ -17,7 +17,7 @@
 의존성, 크기, branch/spec/plan/report 산출물, 완료 기준을 관리한다.
 
 현재 repository에는 P0 governance 문서, P1 Python scaffold, P2 backend feasibility, P3 core contract,
-P3.5 rule source audit, P4 normalization/protection layer가 있다. 이후 구현은 이 WBS의 phase를
+P3.5 rule source audit, P4 normalization/protection layer, P5 synthetic composition fallback이 있다. 이후 구현은 이 WBS의 phase를
 따라 진행한다.
 
 `docs/assets/**`는 read-only reference다. WBS 수행 중 수정하지 않는다.
@@ -349,7 +349,7 @@ ops 승격 후보:
 - 이름은 자동 탐지하지 않고 external span으로 들어온 경우만 보호됨
 - restore 후 원래 protected span이 보존됨
 
-### P5. Synthetic N-best WFST Composition MVP - todo L
+### P5. Synthetic N-best WFST Composition MVP - done L
 
 목표: 음성 없이 synthetic N-best artifact와 correction rule로 weighted composition 결과를 생성한다.
 
@@ -358,6 +358,9 @@ branch: `wbs/P5-synthetic-nbest-wfst`
 spec: `docs/dev/specs/p5-synthetic-nbest-wfst.md`
 plan: `docs/dev/plans/p5-synthetic-nbest-wfst-plan.md`
 loop level: Level 2
+result: Pynini unavailable 조건에 맞춰 phrase-rule fallback composition을 구현했다. N-best candidate,
+deterministic rule order, left-to-right rule application, optional keep/correct branch, obligatory correction,
+no-rule fallback trace를 test로 고정했다.
 
 예상 산출물:
 
