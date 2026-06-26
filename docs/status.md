@@ -51,8 +51,9 @@ leakage-safe correction evaluation을 대상으로 진행 중이다.
 | P16 SRT Run Inventory / Matching | done | `_l.srt` 4,655개 catalog, label matched 4,655개, invalid 131개 |
 | P17 Misrecognition Pair Mining | done | SRT 4,128개에서 pair 후보 104,924개 생성, P18 승격 감사 필요 |
 | P18 Pair Review / Rule Source Audit v2 | done | 자동 seed 0개, manual review 후보 394개로 보수적 감사 완료 |
+| P19 Real HF N-best Extraction | blocked | HF dataset 확인 완료, large-v3 beam20 CPU 추출 120초+ 미완료 |
 
 ## Next Actions
 
-1. P18 manual review 후보를 사람이 검토하거나 도메인 seed source를 보강한다.
-2. 실제 HF N-best smoke와 targetability를 실행한다.
+1. P19를 계속하려면 GPU runtime을 사용하거나, 모델/beam 설정 축소 여부를 결정한다.
+2. 확정된 49개 `wrong -> right` pair는 P21 correction rule 입력 후보로 사용한다.

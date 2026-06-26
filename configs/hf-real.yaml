@@ -1,0 +1,18 @@
+runtime: hf-transformers
+dataset_path: /data/MyProject/stt/data-gen/aig-audio-3/data/processed/hf_dataset
+dataset_split: validation
+model_id: openai/whisper-large-v3
+decode:
+  num_beams: 20
+  num_return_sequences: 20
+  return_dict_in_generate: true
+  output_scores: true
+  length_penalty: 1.0
+runtime_options:
+  local_files_only: true
+  device: auto
+  max_duration_sec: 30.0
+outputs:
+  nbest_jsonl: outputs/hf_nbest_real/nbest.jsonl
+  manifest_jsonl: outputs/hf_nbest_real/manifest.jsonl
+  report: docs/reports/experiments/real_hf_nbest_extraction.md
