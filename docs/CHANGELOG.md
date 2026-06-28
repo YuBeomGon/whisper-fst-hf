@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06-29
+
+- Retried P19 Real HF N-best Extraction on CUDA and documented that `openai/whisper-large-v3` with beam20/return20 still fails with CUDA OOM on the available 16GB GPU.
+- Added fp16 CUDA dtype selection and explicit HF processor attention-mask handling to the real HF extractor.
+- Added `docs/reports/experiments/p19_gpu_beam20_stop_report.md` with the P19 stop decision plus Kaldi/OpenFST graph and scoring review.
+
 ## 2026-06-26
 
 - Added project design and WBS seed documents.

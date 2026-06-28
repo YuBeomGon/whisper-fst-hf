@@ -39,6 +39,11 @@ def run(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--local-files-only", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
+    parser.add_argument(
+        "--torch-dtype",
+        choices=["auto", "float16", "float32", "bfloat16"],
+        default="auto",
+    )
     args = parser.parse_args(argv)
 
     blockers: list[str] = []
@@ -65,6 +70,7 @@ def run(argv: Sequence[str] | None = None) -> int:
                 config=config,
                 local_files_only=args.local_files_only,
                 device=args.device,
+                torch_dtype=args.torch_dtype,
             )
             created_at = datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
             artifacts = [
@@ -123,6 +129,7 @@ def _generate_hf_outputs(
     config: HFExtractorConfig,
     local_files_only: bool,
     device: str,
+    torch_dtype: str,
 ) -> dict[str, list[HFHypothesisOutput]]:
     try:
         import torch
@@ -131,22 +138,29 @@ def _generate_hf_outputs(
         raise RuntimeError("torch and transformers are required for real HF extraction") from exc
 
     resolved_device = _resolve_device(device, torch)
+    resolved_torch_dtype = _resolve_torch_dtype(torch_dtype, resolved_device, torch)
     processor = AutoProcessor.from_pretrained(model_id, local_files_only=local_files_only)
-    model = AutoModelForSpeechSeq2Seq.from_pretrained(model_id, local_files_only=local_files_only)
+    model = AutoModelForSpeechSeq2Seq.from_pretrained(
+        model_id,
+        local_files_only=local_files_only,
+        torch_dtype=resolved_torch_dtype,
+    )
     model.to(resolved_device)
     model.eval()
 
     outputs_by_record: dict[str, list[HFHypothesisOutput]] = {}
     for record in records:
-        inputs = processor(
-            record.audio,
-            sampling_rate=record.sampling_rate,
-            return_tensors="pt",
+        inputs = _build_processor_inputs(processor, record)
+        input_features, attention_mask = _prepare_hf_generate_inputs(
+            inputs,
+            resolved_device=resolved_device,
+            torch_dtype=resolved_torch_dtype,
+            torch_module=torch,
         )
-        input_features = inputs.input_features.to(resolved_device)
         with torch.no_grad():
             generated = model.generate(
                 input_features,
+                attention_mask=attention_mask,
                 num_beams=config.num_beams,
                 num_return_sequences=config.num_return_sequences,
                 return_dict_in_generate=True,
@@ -171,6 +185,47 @@ def _generate_hf_outputs(
             for sequence, text, score in zip(sequences, texts, score_values, strict=True)
         ]
     return outputs_by_record
+
+
+def _build_processor_inputs(processor, record):
+    return processor(
+        record.audio,
+        sampling_rate=record.sampling_rate,
+        return_tensors="pt",
+        return_attention_mask=True,
+    )
+
+
+def _resolve_torch_dtype(dtype: str, resolved_device: str, torch_module):
+    if dtype == "auto":
+        return torch_module.float16 if resolved_device == "cuda" else torch_module.float32
+    if dtype == "float16":
+        return torch_module.float16
+    if dtype == "float32":
+        return torch_module.float32
+    if dtype == "bfloat16":
+        return torch_module.bfloat16
+    raise ValueError(f"unsupported torch dtype: {dtype}")
+
+
+def _prepare_hf_generate_inputs(
+    inputs,
+    *,
+    resolved_device: str,
+    torch_dtype,
+    torch_module,
+):
+    input_features = inputs.input_features.to(device=resolved_device, dtype=torch_dtype)
+    attention_mask = getattr(inputs, "attention_mask", None)
+    if attention_mask is None:
+        attention_mask = torch_module.ones(
+            (input_features.shape[0], input_features.shape[-1]),
+            dtype=torch_module.long,
+            device=resolved_device,
+        )
+    else:
+        attention_mask = attention_mask.to(device=resolved_device)
+    return input_features, attention_mask
 
 
 def _resolve_device(device: str, torch_module) -> str:

@@ -1,5 +1,10 @@
 from pathlib import Path
 
+from scripts.extract_real_hf_nbest import (
+    _build_processor_inputs,
+    _prepare_hf_generate_inputs,
+    _resolve_torch_dtype,
+)
 from whisper_wfst.artifact_io import read_nbest_jsonl, write_nbest_jsonl
 from whisper_wfst.hf_audio_extractor import (
     HFDatasetRecord,
@@ -115,6 +120,51 @@ def test_write_real_hf_manifest_preserves_reference_and_report_is_redacted(
     assert "보험가입금액" not in report
 
 
+def test_auto_torch_dtype_uses_fp16_for_cuda_and_float32_for_cpu() -> None:
+    torch = _FakeTorch()
+
+    assert _resolve_torch_dtype("auto", "cuda", torch) == torch.float16
+    assert _resolve_torch_dtype("auto", "cpu", torch) == torch.float32
+    assert _resolve_torch_dtype("bfloat16", "cuda", torch) == torch.bfloat16
+
+
+def test_prepare_hf_generate_inputs_moves_features_and_creates_attention_mask() -> None:
+    torch = _FakeTorch()
+    features = _FakeTensor(shape=(1, 80, 3000))
+    inputs = _FakeProcessorInputs(input_features=features)
+
+    input_features, attention_mask = _prepare_hf_generate_inputs(
+        inputs,
+        resolved_device="cuda",
+        torch_dtype=torch.float16,
+        torch_module=torch,
+    )
+
+    assert input_features is features
+    assert features.to_calls == [{"device": "cuda", "dtype": torch.float16}]
+    assert attention_mask.shape == (1, 3000)
+    assert torch.ones_calls == [
+        {"shape": (1, 3000), "dtype": torch.long, "device": "cuda"}
+    ]
+
+
+def test_build_processor_inputs_requests_real_attention_mask() -> None:
+    processor = _FakeProcessor()
+    record = _record("seg-a", 1.0)
+
+    inputs = _build_processor_inputs(processor, record)
+
+    assert inputs == "processor-output"
+    assert processor.calls == [
+        {
+            "audio": record.audio,
+            "sampling_rate": 16000,
+            "return_tensors": "pt",
+            "return_attention_mask": True,
+        }
+    ]
+
+
 def _record(segment_id: str, duration: float) -> HFDatasetRecord:
     return HFDatasetRecord(
         segment_id=segment_id,
@@ -130,3 +180,58 @@ def _record(segment_id: str, duration: float) -> HFDatasetRecord:
         cut_duration=duration,
         chunk_strategy="deterministic_non_overlap",
     )
+
+
+class _FakeTorch:
+    float16 = "float16"
+    float32 = "float32"
+    bfloat16 = "bfloat16"
+    long = "long"
+
+    def __init__(self) -> None:
+        self.ones_calls = []
+
+    def ones(self, shape, *, dtype, device):  # noqa: ANN001, ANN201
+        self.ones_calls.append({"shape": shape, "dtype": dtype, "device": device})
+        return _FakeTensor(shape=shape)
+
+
+class _FakeTensor:
+    def __init__(self, *, shape) -> None:  # noqa: ANN001
+        self.shape = shape
+        self.to_calls = []
+
+    def to(self, *, device, dtype=None):  # noqa: ANN001, ANN201
+        call = {"device": device}
+        if dtype is not None:
+            call["dtype"] = dtype
+        self.to_calls.append(call)
+        return self
+
+
+class _FakeProcessorInputs:
+    def __init__(self, *, input_features) -> None:  # noqa: ANN001
+        self.input_features = input_features
+
+
+class _FakeProcessor:
+    def __init__(self) -> None:
+        self.calls = []
+
+    def __call__(  # noqa: ANN204
+        self,
+        audio,
+        *,
+        sampling_rate,
+        return_tensors,
+        return_attention_mask,
+    ):
+        self.calls.append(
+            {
+                "audio": audio,
+                "sampling_rate": sampling_rate,
+                "return_tensors": return_tensors,
+                "return_attention_mask": return_attention_mask,
+            }
+        )
+        return "processor-output"

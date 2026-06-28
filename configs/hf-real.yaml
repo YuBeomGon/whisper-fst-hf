@@ -11,6 +11,7 @@ decode:
 runtime_options:
   local_files_only: true
   device: auto
+  torch_dtype: auto
   max_duration_sec: 30.0
 outputs:
   nbest_jsonl: outputs/hf_nbest_real/nbest.jsonl

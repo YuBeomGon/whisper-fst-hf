@@ -1,6 +1,6 @@
 # Documentation Index
 
-최종 갱신: 2026-06-26
+최종 갱신: 2026-06-29
 
 ## Current SSOT
 
@@ -41,6 +41,7 @@
 - `docs/reports/experiments/offline_mvp_manifest.json`: P10 offline MVP artifact/checksum manifest
 - `docs/reports/experiments/correction_calibration.md`: P11 calibration and freeze checksum report
 - `docs/reports/experiments/poc_go_no_go.md`: P13 final PoC decision report
+- `docs/reports/experiments/p19_gpu_beam20_stop_report.md`: P19 CUDA GPU beam20/return20 OOM stop report and Kaldi/OpenFST scoring review
 - `docs/dev/decisions/0001-poc-continue-with-scope-change.md`: P13 ADR
 
 ## Reviews
